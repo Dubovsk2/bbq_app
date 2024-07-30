@@ -1,0 +1,12 @@
+<%= form_for [@event, photograph] do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: photograph} %>
+
+  <div class="form-outline mb-4">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo, autofocus: true %>
+  </div>
+
+  <div class="actions mt-2">
+    <%= f.submit 'Добавить', class: 'btn btn-primary' %>
+  </div>
+<% end %>

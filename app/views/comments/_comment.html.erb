@@ -1,0 +1,30 @@
+<div class="row d-flex justify-content-center mb-2">
+  <div class="">
+    <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+      <div class="card-body p-2">
+        <div class="card mb-2">
+          <div class="card-body">
+            <p><%= comment.body %></p>
+            <p class="border-bottom border-3"><small><%= l(comment.created_at, format: :long) %></small></p>
+            <div class="d-flex justify-content-between">
+              <% if comment.user.present? %>
+                <%= render partial: 'users/user', locals: { user: comment.user }%>
+              <% else %>
+                <div class="d-flex flex-row align-items-center">
+                  <%= image_tag(user_avatar(nil), size: "25")%>
+                  <p class="small mb-0 ms-2"><%= comment.user_name %></p>
+                </div>
+              <% end %>
+              <% if current_user_can_edit?(comment)%>
+                <div class="d-flex flex-row align-items-center">
+                  <%= button_to "", event_comment_path(comment.event, comment), method: :delete, class: "bi bi-trash3-fill", style: "background: none; border: none; color: red;"%>
+                  <%= link_to "", edit_event_comment_path(comment.event, comment), class: 'bi bi-gear-fill'%>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

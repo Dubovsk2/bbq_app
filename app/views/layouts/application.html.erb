@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bbq7</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body>
+    <header>
+      <%= render partial: "partials/navbar" %>
+    </header>
+
+    <% if flash[:notice] %>
+      <%= content_tag(:div, flash[:notice], class: "alert alert-success mx-2" )%>
+    <% elsif flash[:alert] %>
+      <%= content_tag(:div, flash[:alert], class: "alert alert-danger mx-2" )%>
+    <% end %>
+    <div class="mx-3">
+      <%= yield %>
+    </div>
+    <footer>
+      <p class="text-center"><%= t('app.company')%>, 2024</p>
+    </footer>
+  </body>
+</html>

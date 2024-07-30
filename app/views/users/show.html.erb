@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <div class="text-center">
+    <h1><%= @user.name %></h1>
+    <%= image_tag user_avatar(@user)%>
+    <% if current_user == @user %>
+      <div class="buffer-both">
+        <%= link_to "Создать событие", new_event_path, class: 'btn btn-success' %>
+        <%= link_to "Редактировать профиль", edit_user_registration_path, class: 'btn btn-primary'%>
+      </div>
+    <% end %>
+  </div>
+  <% if @user.events.any? %>
+    <h3>Организовал:</h3>
+    <div class="row">
+      <%= render partial: "events/event", collection: @user.events %>
+    </div>
+  <% end%>
+    <% if @user.subscriptions.any? %>
+    <h3>Постетит:</h3>
+    <div class="row">
+      <%= render partial: "events/event", collection: @user.subscriptions.map(&:event) %>
+    </div>
+  <% end%>
+</div>

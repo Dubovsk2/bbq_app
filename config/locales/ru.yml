@@ -1,0 +1,61 @@
+ru:
+  hello: "Привет, мир"
+  # Перевод моделей
+  activerecord:
+    # Перевод названия моделей
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      comment: 'Комментарий'
+      subscription: 'Подписка'
+      photograph: 'Фотография'
+
+    # Перевод названий аттрибутов моделей
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        avatar: 'Аватар'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      comment:
+        body: 'Текст'
+        user_name: 'Имя'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+      photograph: 
+        photo: 'Фото'
+
+  # Перевод сообщений, которые отправляет контроллер
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+    users:
+      updated: 'Вы обновили свой профиль'
+    comments:
+      created: 'Вы добавили комментарий'
+      updated: 'Вы обновили комментарий'
+      destroyed: 'Вы удалили комментарий'
+      error: 'Что-то пошло не так'
+    subscriptions:
+      created: 'Подписка создана'
+      destroyed: 'Подписка удалена'
+      error: 'Что-то пошло не так'
+    photographs:
+      created: 'Фотография добавлена'
+      destroyed: 'Фотография удалена'
+      error: 'Что-то пошло не так'
+
+
+  # Перевод названия приложения и компании-разработчика
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший программист'

@@ -1,0 +1,9 @@
+<h1>Редактирование комментария</h1>
+
+<%= form_with model: [@event ,@comment] do |form| %>
+  <%= form.text_area :body %><br>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'Страница события', @event %> |
+<%= link_to 'Назад', events_path %>
