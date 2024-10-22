@@ -1,24 +1,17 @@
-# README
+BBQ Ruby on Rails приложение для создания событий, приглашения друзей на мероприятие, для общения внутри мероприятия, для отправки информации о мероприятии, размещения фотографий.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Запуск программы
 
-Things you may want to cover:
+Клонировать репозиторий: git clone https://github.com/Dubovsk2/bbq_app.git
 
-* Ruby version
+Установить библиотеки:
 
-* System dependencies
+bundle install
 
-* Configuration
+Запустите миграции: rails db:migrate
 
-* Database creation
+Соберите js файлы: yarn install
 
-* Database initialization
+Установить mini_magick: sudo apt install ruby-mini-magick Запустите сервер: rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Реализованный функционал: Интернационализация (ru, en), i18n Мероприятия: создание, редактирование, удаление Комментарии для события Подписки на событие Отправка почты (yandex) Редактирование профиля Работа с изображениями (mini_magick, carrierwave, lightbox2) Аутентификация (Devise)
